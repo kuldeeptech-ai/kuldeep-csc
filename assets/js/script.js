@@ -1,35 +1,46 @@
-// DARK MODE TOGGLE
-const toggle = document.getElementById("toggle-mode");
+/* ========== MOBILE MENU TOGGLE ========== */
+const menuToggle = document.getElementById("menuToggle");
+const mobileMenu = document.getElementById("mobileMenu");
 
-toggle.addEventListener("change", () => {
-    document.body.classList.toggle("dark");
-    
-    // Save mode in localStorage
-    if (document.body.classList.contains("dark")) {
-        localStorage.setItem("theme", "dark");
-    } else {
-        localStorage.setItem("theme", "light");
-    }
+menuToggle.addEventListener("click", () => {
+    mobileMenu.style.display =
+        mobileMenu.style.display === "flex" ? "none" : "flex";
 });
 
-// Load theme on page refresh
-window.onload = () => {
-    if (localStorage.getItem("theme") === "dark") {
-        document.body.classList.add("dark");
-        toggle.checked = true;
-    }
-};
+/* Close menu when clicking any link */
+document.querySelectorAll(".mobile-menu a").forEach(link => {
+    link.addEventListener("click", () => {
+        mobileMenu.style.display = "none";
+    });
+});
 
-// SERVICE SEARCH
+/* ========== SERVICE SEARCH FILTER ========== */
 const searchBox = document.getElementById("serviceSearch");
+
 if (searchBox) {
     searchBox.addEventListener("keyup", () => {
-        const value = searchBox.value.toLowerCase();
+        const searchValue = searchBox.value.toLowerCase();
         const cards = document.querySelectorAll(".service-card");
 
         cards.forEach(card => {
-            const name = card.innerText.toLowerCase();
-            card.style.display = name.includes(value) ? "block" : "none";
+            const text = card.innerText.toLowerCase();
+            card.style.display = text.includes(searchValue) ? "block" : "none";
         });
     });
 }
+
+/* ========== SMOOTH APPEAR ANIMATION ========== */
+const items = document.querySelectorAll(".service-card, .quick-item");
+
+const revealOnScroll = () => {
+    items.forEach(item => {
+        const itemTop = item.getBoundingClientRect().top;
+        if (itemTop < window.innerHeight - 50) {
+            item.style.opacity = "1";
+            item.style.transform = "translateY(0)";
+        }
+    });
+};
+
+window.addEventListener("scroll", revealOnScroll);
+window.addEventListener("load", revealOnScroll);
