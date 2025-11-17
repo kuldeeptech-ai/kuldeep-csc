@@ -1,101 +1,143 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>About Us | Kuldeep Rai Digital Services</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About • Kuldeep Rai Digital Services</title>
 
-    <link rel="stylesheet" href="assets/css/style.css" />
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Urbanist:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Urbanist',sans-serif;}
+body{background:#f4f7fc;color:#1a1a1a;overflow-x:hidden;}
+
+/* HEADER */
+header{
+width:100%;padding:12px 22px;
+background:#0b1f3f;color:#fff;
+display:flex;justify-content:space-between;align-items:center;
+position:fixed;top:0;left:0;z-index:9999;
+box-shadow:0 3px 12px rgba(0,0,0,0.2);
+}
+.logo-box{display:flex;align-items:center;gap:10px;}
+.logo-img{width:40px;height:40px;border-radius:50%;}
+.logo-text{font-size:18px;font-weight:700;}
+nav{display:flex;gap:20px;}
+nav a{color:#cfe1ff;text-decoration:none;font-size:15px;font-weight:500;}
+nav a:hover,nav .active{color:#4cc9ff;}
+.menu-icon{display:none;font-size:28px;cursor:pointer;}
+.mobile-menu{display:none;flex-direction:column;background:#0b1f3f;padding:12px 20px;}
+.mobile-menu a{padding:12px 0;color:#cfe1ff;text-decoration:none;border-bottom:1px solid rgba(255,255,255,0.1);}
+
+/* ABOUT MAIN */
+.about{
+padding:120px 20px 40px;text-align:center;
+}
+.about h1{font-size:34px;font-weight:700;}
+.about-img{
+width:150px;height:150px;border-radius:12px;
+margin:25px auto;
+box-shadow:0 6px 18px rgba(0,0,0,0.2);
+}
+.about p{
+max-width:800px;margin:10px auto;
+font-size:17px;line-height:1.5;
+}
+
+/* CARDS */
+.card-grid{
+margin-top:35px;
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+gap:20px;padding:20px;
+}
+.card{
+background:#fff;padding:22px;border-radius:12px;
+text-align:center;
+box-shadow:0 5px 22px rgba(0,0,0,0.08);
+}
+.card h3{font-size:20px;font-weight:700;margin-bottom:10px;}
+
+footer{
+background:#0b1f3f;color:#cfe1ff;padding:15px;text-align:center;font-size:14px;margin-top:40px;
+}
+
+/* RESPONSIVE */
+@media(max-width:900px){
+nav{display:none;}
+.menu-icon{display:block;}
+}
+</style>
+
 </head>
-
 <body>
 
-    <!-- Theme Toggle -->
-    <div class="theme-toggle">
-        <input type="checkbox" id="toggle-mode">
-        <label for="toggle-mode" class="toggle-label"></label>
-    </div>
+<!-- HEADER -->
+<header>
+<div class="logo-box">
+<img src="https://raw.githubusercontent.com/kuldeeptech-ai/kuldeep-csc/refs/heads/main/assets/1000204225.png" class="logo-img">
+<div class="logo-text">Kuldeep Rai Digital Services</div>
+</div>
 
-    <!-- Header -->
-    <header>
-        <div class="logo">Kuldeep Rai Digital Services</div>
-        <nav>
-            <a href="index.html">Home</a>
-            <a href="services.html">Services</a>
-            <a class="active" href="about.html">About</a>
-            <a href="contact.html">Contact</a>
-        </nav>
-    </header>
+<nav>
+<a href="index.html">Home</a>
+<a href="services.html">Services</a>
+<a class="active" href="about.html">About</a>
+<a href="contact.html">Contact</a>
+</nav>
 
-    <!-- About Section -->
-    <section class="about-section">
-        <h1>About Our Center</h1>
-        <p>
-            Kuldeep Rai Digital Services ek registered and trusted Jan Seva Kendra hai,
-            jaha par aapko sabhi government aur digital services ek hi jagah par sapne tarike se milti hain.
-            Hamara aim hai ki har vyakti tak sahi aur time par service pahunch sake.
-        </p>
+<div class="menu-icon" id="menuToggle">☰</div>
+</header>
 
-        <div class="about-cards">
+<div class="mobile-menu" id="mobileMenu">
+<a href="index.html">Home</a>
+<a href="services.html">Services</a>
+<a class="active" href="about.html">About</a>
+<a href="contact.html">Contact</a>
+</div>
 
-            <div class="about-card">
-                <h3>Our Mission</h3>
-                <p>
-                    Har citizen ko fast, accurate aur transparent digital seva dena.
-                    Aapka time bachana aur paperwork ko simple banana hamara focus hai.
-                </p>
-            </div>
+<!-- ABOUT -->
+<section class="about">
+<h1>About Us</h1>
 
-            <div class="about-card">
-                <h3>Our Vision</h3>
-                <p>
-                    Technology ka use karke ek aise digital center ka nirman karna
-                    jisse gaon aur sheher dono me government services accessible ho.
-                </p>
-            </div>
+<img src="https://raw.githubusercontent.com/kuldeeptech-ai/kuldeep-csc/refs/heads/main/assets/1000204225.png" class="about-img">
 
-            <div class="about-card">
-                <h3>Why People Trust Us</h3>
-                <ul>
-                    <li>CSC Verified Center</li>
-                    <li>100+ Government Services</li>
-                    <li>Fast & Hassle-free Processing</li>
-                    <li>Affordable Service Charges</li>
-                    <li>Zero Fake Promises</li>
-                </ul>
-            </div>
+<p>
+Kuldeep Rai Digital Services ek trusted CSC • Jan Seva Kendra hai jo sabhi 
+government, online aur digital services ek jagah provide karta hai. Humara 
+goal hai ki gaon aur sheher dono me logo ko fast, simple aur trusted digital services mil sake.
+</p>
 
-        </div>
+<div class="card-grid">
 
-    </section>
+<div class="card">
+<h3>Our Mission</h3>
+<p>Sabhi nagrikon ko saral, sahi aur samay par government services dena.</p>
+</div>
 
-    <!-- Experience / Stats -->
-    <section class="stats-section">
-        <div class="stat-box">
-            <h2>5+</h2>
-            <p>Years of Experience</p>
-        </div>
+<div class="card">
+<h3>Our Vision</h3>
+<p>Technology ke jariye har ghar tak digital seva pahuchana.</p>
+</div>
 
-        <div class="stat-box">
-            <h2>100+</h2>
-            <p>Government Services</p>
-        </div>
+<div class="card">
+<h3>Why Choose Us</h3>
+<p>Fast service • Low charges • 100% trusted • Professional support</p>
+</div>
 
-        <div class="stat-box">
-            <h2>10,000+</h2>
-            <p>Customers Served</p>
-        </div>
-    </section>
+</div>
+</section>
 
-    <!-- WhatsApp Floating -->
-    <a href="https://wa.me/919555158536" class="whatsapp-btn">WhatsApp</a>
+<footer>© 2025 Kuldeep Rai Digital Services. All Rights Reserved.</footer>
 
-    <footer>
-        <p>© 2025 Kuldeep Rai Digital Services. All Rights Reserved.</p>
-    </footer>
-
-    <script src="assets/js/script.js"></script>
+<script>
+const menuToggle=document.getElementById("menuToggle");
+const mobileMenu=document.getElementById("mobileMenu");
+menuToggle.addEventListener("click",()=> {
+mobileMenu.style.display=mobileMenu.style.display==="flex"?"none":"flex";
+});
+</script>
 
 </body>
 </html>
