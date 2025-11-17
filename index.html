@@ -1,126 +1,418 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kuldeep Rai Digital Services | CSC Center</title>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Kuldeep Rai Digital Services | CSC Center</title>
 
-    <!-- Urbanist Font -->
-    <link href="https://fonts.googleapis.com/css2?family=Urbanist:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<!-- Favicon -->
+<link rel="icon" type="image/png" href="https://i.imgur.com/6Jg6B4H.png">
 
-    <link rel="stylesheet" href="assets/css/style.css">
+<!-- Font -->
+<link href="https://fonts.googleapis.com/css2?family=Urbanist:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+/* GLOBAL */
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Urbanist',sans-serif;
+}
+body{
+background:#f4f7fc;
+color:#1a1a1a;
+overflow-x:hidden;
+}
+
+/* FIXED HEADER (STABLE) */
+header{
+width:100%;
+padding:14px 40px;
+background:#0b1f3f;
+color:#fff;
+display:flex;
+justify-content:space-between;
+align-items:center;
+position:fixed;
+top:0;
+left:0;
+z-index:9999;
+box-shadow:0 3px 12px rgba(0,0,0,0.25);
+}
+.logo-img{
+width:42px;
+height:42px;
+border-radius:50%;
+margin-right:10px;
+}
+.logo-box{
+display:flex;
+align-items:center;
+}
+.logo-text{
+font-size:20px;
+font-weight:700;
+}
+
+/* NAV */
+nav{
+display:flex;
+align-items:center;
+}
+nav a{
+margin-left:22px;
+text-decoration:none;
+color:#cfe1ff;
+font-weight:500;
+font-size:16px;
+transition:0.2s;
+}
+nav a:hover,
+nav .active{
+color:#4cc9ff;
+}
+
+/* MOBILE MENU ICON */
+.menu-icon{
+display:none;
+font-size:28px;
+cursor:pointer;
+}
+
+/* MOBILE MENU */
+.mobile-menu{
+display:none;
+flex-direction:column;
+width:100%;
+background:#0b1f3f;
+padding:12px 30px;
+margin-top:58px;
+}
+.mobile-menu a{
+color:#cfe1ff;
+padding:12px 0;
+text-decoration:none;
+border-bottom:1px solid rgba(255,255,255,0.15);
+}
+
+/* HERO */
+.hero{
+padding:120px 40px 70px;
+display:flex;
+justify-content:space-between;
+align-items:center;
+background:linear-gradient(135deg,#0d2a55,#123a77);
+color:#fff;
+flex-wrap:wrap;
+}
+.hero-left{
+max-width:480px;
+animation:fadeLeft 1s ease forwards;
+opacity:0;
+}
+@keyframes fadeLeft{
+0%{opacity:0;transform:translateX(-40px);}
+100%{opacity:1;transform:translateX(0);}
+}
+.hero-left h1{
+font-size:42px;
+font-weight:700;
+line-height:1.2;
+}
+.hero-left p{
+margin-top:12px;
+font-size:18px;
+opacity:0.9;
+}
+.hero-btn{
+display:inline-block;
+margin-top:25px;
+padding:14px 26px;
+background:#4cc9ff;
+color:#002a4d;
+border-radius:8px;
+text-decoration:none;
+font-weight:600;
+font-size:18px;
+box-shadow:0 4px 12px rgba(0,187,255,0.4);
+}
+.hero-right img{
+width:330px;
+animation:floatImage 4s ease-in-out infinite;
+}
+@keyframes floatImage{
+0%{transform:translateY(0);}
+50%{transform:translateY(-12px);}
+100%{transform:translateY(0);}
+}
+
+/* BANNER */
+.banner{
+margin:0;
+padding:40px 20px;
+background:linear-gradient(90deg,#123a77,#0057d8,#008cff);
+color:#fff;
+text-align:center;
+font-size:24px;
+font-weight:600;
+letter-spacing:0.5px;
+box-shadow:0 4px 20px rgba(0,0,0,0.2);
+}
+
+/* TITLE */
+.section-title{
+text-align:center;
+font-size:30px;
+font-weight:700;
+margin-top:40px;
+}
+
+/* SEARCH */
+.search-box{
+text-align:center;
+margin-top:15px;
+}
+.search-box input{
+width:90%;
+max-width:450px;
+padding:12px;
+border:1px solid #c8d3e3;
+border-radius:10px;
+font-size:16px;
+outline:none;
+}
+
+/* SERVICES GRID */
+.service-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+gap:22px;
+padding:40px;
+}
+.service-card{
+background:#fff;
+padding:22px;
+border-radius:12px;
+text-align:center;
+box-shadow:0 6px 20px rgba(0,0,0,0.08);
+transition:0.25s;
+opacity:0;
+transform:translateY(20px);
+}
+.service-card:hover{
+transform:translateY(-6px) scale(1.02);
+box-shadow:0 6px 25px rgba(0,0,0,0.15);
+}
+.service-card h3{
+margin-top:10px;
+font-weight:600;
+font-size:20px;
+}
+.service-card p{
+margin-top:6px;
+font-size:15px;
+color:#444;
+}
+
+/* HIDDEN SERVICES (searchable) */
+.hidden-service{
+display:none;
+}
+
+/* QUICK LINKS */
+.quick-links{
+padding:40px;
+text-align:center;
+}
+.quick-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(120px,1fr));
+padding:20px;
+gap:20px;
+}
+.quick-item{
+background:#fff;
+padding:20px;
+border-radius:12px;
+text-decoration:none;
+color:#1a1a1a;
+font-weight:600;
+box-shadow:0 6px 20px rgba(0,0,0,0.08);
+opacity:0;
+transform:translateY(20px);
+transition:0.25s;
+}
+.quick-item:hover{
+transform:translateY(-6px);
+}
+
+/* FOOTER */
+footer{
+background:#0b1f3f;
+color:#cfe1ff;
+text-align:center;
+padding:18px;
+margin-top:40px;
+}
+
+/* RESPONSIVE */
+@media(max-width:900px){
+nav{display:none;}
+.menu-icon{display:block;}
+.hero{text-align:center;}
+.hero-right img{width:240px;margin:auto;}
+.hero-left h1{font-size:32px;}
+}
+
+</style>
+
 </head>
-
 <body>
 
-    <!-- Header -->
-    <header class="header">
-        <div class="logo">Kuldeep Rai Digital Services</div>
+<!-- HEADER -->
+<header>
+<div class="logo-box">
+<img class="logo-img" src="https://i.imgur.com/6Jg6B4H.png">
+<div class="logo-text">Kuldeep Rai Digital Services</div>
+</div>
 
-        <nav class="nav">
-            <a href="index.html" class="active">Home</a>
-            <a href="services.html">Services</a>
-            <a href="about.html">About</a>
-            <a href="contact.html">Contact</a>
-        </nav>
+<nav>
+<a class="active" href="#">Home</a>
+<a href="#">Services</a>
+<a href="#">About</a>
+<a href="#">Contact</a>
+</nav>
 
-        <div class="menu-icon" id="menuToggle">☰</div>
-    </header>
+<div class="menu-icon" id="menuToggle">☰</div>
+</header>
 
-    <!-- Mobile Menu -->
-    <div class="mobile-menu" id="mobileMenu">
-        <a href="index.html" class="active">Home</a>
-        <a href="services.html">Services</a>
-        <a href="about.html">About</a>
-        <a href="contact.html">Contact</a>
-    </div>
+<!-- MOBILE MENU -->
+<div class="mobile-menu" id="mobileMenu">
+<a class="active" href="#">Home</a>
+<a href="#">Services</a>
+<a href="#">About</a>
+<a href="#">Contact</a>
+</div>
 
-    <!-- Hero Section -->
-    <section class="hero">
-        <div class="hero-left">
-            <h1>Welcome to Kuldeep Rai Digital Services</h1>
-            <p>Your trusted Jan Seva Kendra (CSC Center) offering all government and digital services in one place.</p>
+<!-- HERO -->
+<section class="hero">
+<div class="hero-left">
+<h1>Welcome to Kuldeep Rai Digital Services</h1>
+<p>Your trusted Jan Seva Kendra offering all Digital & Govt services.</p>
+<a href="#" class="hero-btn">Explore Services</a>
+</div>
 
-            <a href="services.html" class="hero-btn">Our Services</a>
-        </div>
+<div class="hero-right">
+<img src="https://cdn-icons-png.flaticon.com/512/7050/7050312.png">
+</div>
+</section>
 
-        <div class="hero-right">
-            <img src="assets/images/hero-illustration.png" alt="Digital Services">
-        </div>
-    </section>
+<!-- BANNER -->
+<div class="banner">All Government & Digital Services Available</div>
 
-    <!-- Our Services -->
-    <section class="services-sec">
-        <div class="section-title">Our Services</div>
+<!-- SERVICES -->
+<section>
+<div class="section-title">Our Services</div>
 
-        <div class="search-box">
-            <input type="text" id="serviceSearch" placeholder="Search services...">
-        </div>
+<div class="search-box">
+<input type="text" id="serviceSearch" placeholder="Search services...">
+</div>
 
-        <div class="service-grid">
+<div class="service-grid">
 
-            <div class="service-card">
-                <img src="assets/icons/aadhaar.png" class="icon">
-                <h3>Aadhaar Enrollment</h3>
-                <p>Enroll or update your Aadhaar information.</p>
-            </div>
+<div class="service-card">
+<h3>Aadhaar Enrolment</h3>
+<p>New Aadhaar creation.</p>
+</div>
 
-            <div class="service-card">
-                <img src="assets/icons/pan.png" class="icon">
-                <h3>PAN Card</h3>
-                <p>Apply for new PAN or make corrections.</p>
-            </div>
+<div class="service-card">
+<h3>Aadhaar Update</h3>
+<p>Mobile, Address, DOB update.</p>
+</div>
 
-            <div class="service-card">
-                <img src="assets/icons/voter.png" class="icon">
-                <h3>Voter Services</h3>
-                <p>New registration, correction, linking.</p>
-            </div>
+<div class="service-card">
+<h3>PAN Card</h3>
+<p>New PAN & Correction.</p>
+</div>
 
-            <div class="service-card">
-                <img src="assets/icons/digital.png" class="icon">
-                <h3>Digital Payments</h3>
-                <p>UPI, BBPS, recharge & much more.</p>
-            </div>
+<div class="service-card">
+<h3>Voter ID</h3>
+<p>New, correction & linking.</p>
+</div>
 
-        </div>
-    </section>
+<!-- HIDDEN SEARCHABLE SERVICES -->
+<div class="service-card hidden-service">
+<h3>Birth Certificate</h3>
+<p>Apply, correction, re-issue.</p>
+</div>
 
-    <!-- Quick Links -->
-    <section class="quick-links">
-        <h2>Useful Government Portals</h2>
+<div class="service-card hidden-service">
+<h3>Caste Certificate</h3>
+<p>SC/ST/OBC certificate apply.</p>
+</div>
 
-        <div class="quick-grid">
+<div class="service-card hidden-service">
+<h3>Income Certificate</h3>
+<p>Issuance for govt schemes.</p>
+</div>
 
-            <a class="quick-item" href="#" target="_blank">
-                <img src="assets/icons/digilocker.png">
-                <span>DigiLocker</span>
-            </a>
+</div>
+</section>
 
-            <a class="quick-item" href="#" target="_blank">
-                <img src="assets/icons/csc.png">
-                <span>CSC Portal</span>
-            </a>
+<!-- QUICK LINKS -->
+<section class="quick-links">
+<h2>Useful Government Portals</h2>
 
-            <a class="quick-item" href="#" target="_blank">
-                <img src="assets/icons/edistrict.png">
-                <span>e-District</span>
-            </a>
+<div class="quick-grid">
+<a href="#" class="quick-item">DigiLocker</a>
+<a href="#" class="quick-item">CSC Portal</a>
+<a href="#" class="quick-item">e-District</a>
+<a href="#" class="quick-item">UIDAI</a>
+</div>
+</section>
 
-            <a class="quick-item" href="#" target="_blank">
-                <img src="assets/icons/uidai.png">
-                <span>UIDAI</span>
-            </a>
+<!-- FOOTER -->
+<footer>
+© 2025 Kuldeep Rai Digital Services. All Rights Reserved.
+</footer>
 
-        </div>
-    </section>
+<script>
 
-    <!-- Footer -->
-    <footer>
-        © 2025 Kuldeep Rai Digital Services. All Rights Reserved.
-    </footer>
+/* MOBILE MENU */
+const menuToggle=document.getElementById("menuToggle");
+const mobileMenu=document.getElementById("mobileMenu");
+menuToggle.addEventListener("click",()=>{
+mobileMenu.style.display=mobileMenu.style.display==="flex"?"none":"flex";
+});
 
-    <script src="assets/js/script.js"></script>
+/* SEARCH FILTER (includes hidden services) */
+const searchBox=document.getElementById("serviceSearch");
+if(searchBox){
+searchBox.addEventListener("keyup",()=>{
+const value=searchBox.value.toLowerCase();
+document.querySelectorAll(".service-card").forEach(card=>{
+card.style.display=card.innerText.toLowerCase().includes(value)?"block":"none";
+});
+});
+}
+
+/* SCROLL ANIMATION */
+const animatedElements=document.querySelectorAll(".service-card,.quick-item");
+function revealOnScroll(){
+animatedElements.forEach(el=>{
+const top=el.getBoundingClientRect().top;
+if(top<window.innerHeight-50){
+el.style.opacity="1";
+el.style.transform="translateY(0)";
+}
+});
+}
+window.addEventListener("scroll",revealOnScroll);
+window.addEventListener("load",revealOnScroll);
+
+</script>
 
 </body>
 </html>
