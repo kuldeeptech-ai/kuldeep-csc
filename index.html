@@ -5,19 +5,14 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Kuldeep Rai Digital Services | CSC Center</title>
 
-<!-- Favicon -->
-<link rel="icon" type="image/png" href="https://i.imgur.com/6Jg6B4H.png">
-
-<!-- Font -->
 <link href="https://fonts.googleapis.com/css2?family=Urbanist:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="icon" type="image/png" href="https://i.imgur.com/6Jg6B4H.png">
 
 <style>
 
 /* GLOBAL */
 *{
-margin:0;
-padding:0;
-box-sizing:border-box;
+margin:0; padding:0; box-sizing:border-box;
 font-family:'Urbanist',sans-serif;
 }
 body{
@@ -26,246 +21,151 @@ color:#1a1a1a;
 overflow-x:hidden;
 }
 
-/* FIXED HEADER (STABLE) */
+/* HEADER */
 header{
-width:100%;
-padding:14px 40px;
-background:#0b1f3f;
-color:#fff;
-display:flex;
-justify-content:space-between;
-align-items:center;
-position:fixed;
-top:0;
-left:0;
-z-index:9999;
-box-shadow:0 3px 12px rgba(0,0,0,0.25);
-}
-.logo-img{
-width:42px;
-height:42px;
-border-radius:50%;
-margin-right:10px;
+width:100%; padding:12px 22px;
+background:#0b1f3f; color:#fff;
+display:flex; justify-content:space-between; align-items:center;
+position:fixed; top:0; left:0; z-index:9999;
+box-shadow:0 3px 12px rgba(0,0,0,0.2);
 }
 .logo-box{
-display:flex;
-align-items:center;
+display:flex; align-items:center;
+gap:10px;
+}
+.logo-img{
+width:35px; height:35px; border-radius:50%;
 }
 .logo-text{
-font-size:20px;
-font-weight:700;
+font-size:18px; font-weight:700;
 }
 
 /* NAV */
-nav{
-display:flex;
-align-items:center;
-}
+nav{ display:flex; gap:20px; }
 nav a{
-margin-left:22px;
-text-decoration:none;
-color:#cfe1ff;
-font-weight:500;
-font-size:16px;
-transition:0.2s;
+color:#cfe1ff; text-decoration:none;
+font-size:15px; font-weight:500;
 }
-nav a:hover,
-nav .active{
-color:#4cc9ff;
-}
+nav a:hover, nav .active{ color:#4cc9ff; }
 
-/* MOBILE MENU ICON */
 .menu-icon{
-display:none;
-font-size:28px;
-cursor:pointer;
+display:none; font-size:28px; cursor:pointer;
 }
 
 /* MOBILE MENU */
 .mobile-menu{
-display:none;
-flex-direction:column;
-width:100%;
-background:#0b1f3f;
-padding:12px 30px;
-margin-top:58px;
+display:none; flex-direction:column;
+background:#0b1f3f; padding:12px 20px;
 }
 .mobile-menu a{
-color:#cfe1ff;
 padding:12px 0;
-text-decoration:none;
-border-bottom:1px solid rgba(255,255,255,0.15);
+color:#cfe1ff; text-decoration:none;
+border-bottom:1px solid rgba(255,255,255,0.1);
 }
 
 /* HERO */
 .hero{
-padding:120px 40px 70px;
-display:flex;
-justify-content:space-between;
-align-items:center;
+padding:120px 20px 40px;
+display:flex; justify-content:space-between; align-items:center;
+flex-wrap:wrap;
 background:linear-gradient(135deg,#0d2a55,#123a77);
 color:#fff;
-flex-wrap:wrap;
 }
 .hero-left{
-max-width:480px;
-animation:fadeLeft 1s ease forwards;
-opacity:0;
-}
-@keyframes fadeLeft{
-0%{opacity:0;transform:translateX(-40px);}
-100%{opacity:1;transform:translateX(0);}
+max-width:500px; flex:1;
 }
 .hero-left h1{
-font-size:42px;
-font-weight:700;
-line-height:1.2;
+font-size:38px; line-height:1.2; font-weight:700;
 }
 .hero-left p{
-margin-top:12px;
-font-size:18px;
-opacity:0.9;
+margin-top:10px; font-size:17px; opacity:.9;
 }
 .hero-btn{
-display:inline-block;
-margin-top:25px;
-padding:14px 26px;
-background:#4cc9ff;
-color:#002a4d;
-border-radius:8px;
+display:inline-block; padding:12px 22px;
+background:#4cc9ff; color:#002a4d;
+border-radius:8px; font-size:16px;
+font-weight:600; margin-top:22px;
 text-decoration:none;
-font-weight:600;
-font-size:18px;
-box-shadow:0 4px 12px rgba(0,187,255,0.4);
+box-shadow:0 4px 12px rgba(0,200,255,0.4);
 }
 .hero-right img{
-width:330px;
-animation:floatImage 4s ease-in-out infinite;
+width:320px; max-width:100%;
+animation:floatAnim 5s ease-in-out infinite;
 }
-@keyframes floatImage{
-0%{transform:translateY(0);}
-50%{transform:translateY(-12px);}
-100%{transform:translateY(0);}
+@keyframes floatAnim{
+0%{transform:translateY(0);} 50%{transform:translateY(-10px);} 100%{transform:translateY(0);}
 }
 
-/* BANNER */
-.banner{
-margin:0;
-padding:40px 20px;
-background:linear-gradient(90deg,#123a77,#0057d8,#008cff);
-color:#fff;
-text-align:center;
-font-size:24px;
-font-weight:600;
-letter-spacing:0.5px;
-box-shadow:0 4px 20px rgba(0,0,0,0.2);
-}
-
-/* TITLE */
+/* SERVICES SECTION */
 .section-title{
-text-align:center;
-font-size:30px;
-font-weight:700;
-margin-top:40px;
+text-align:center; margin-top:40px;
+font-size:30px; font-weight:700;
 }
 
-/* SEARCH */
-.search-box{
-text-align:center;
-margin-top:15px;
-}
-.search-box input{
-width:90%;
-max-width:450px;
-padding:12px;
-border:1px solid #c8d3e3;
+#serviceSearch{
+width:90%; max-width:420px;
+padding:12px; margin:20px auto;
+display:block;
+border:1px solid #ccd6e3;
 border-radius:10px;
 font-size:16px;
-outline:none;
 }
 
-/* SERVICES GRID */
 .service-grid{
 display:grid;
-grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
-gap:22px;
-padding:40px;
+grid-template-columns:repeat(auto-fit,minmax(230px,1fr));
+gap:20px; padding:20px;
 }
 .service-card{
-background:#fff;
-padding:22px;
+background:#fff; padding:20px;
 border-radius:12px;
 text-align:center;
-box-shadow:0 6px 20px rgba(0,0,0,0.08);
-transition:0.25s;
-opacity:0;
-transform:translateY(20px);
+box-shadow:0 5px 18px rgba(0,0,0,0.08);
+transition:.25s;
 }
 .service-card:hover{
-transform:translateY(-6px) scale(1.02);
-box-shadow:0 6px 25px rgba(0,0,0,0.15);
+transform:translateY(-5px);
 }
 .service-card h3{
-margin-top:10px;
-font-weight:600;
-font-size:20px;
-}
-.service-card p{
-margin-top:6px;
-font-size:15px;
-color:#444;
-}
-
-/* HIDDEN SERVICES (searchable) */
-.hidden-service{
-display:none;
+font-size:18px; margin-top:12px; font-weight:600;
 }
 
 /* QUICK LINKS */
 .quick-links{
-padding:40px;
+padding:30px 20px;
 text-align:center;
 }
 .quick-grid{
 display:grid;
 grid-template-columns:repeat(auto-fit,minmax(120px,1fr));
-padding:20px;
-gap:20px;
+gap:18px; margin-top:15px;
 }
 .quick-item{
-background:#fff;
-padding:20px;
+background:#fff; padding:18px;
 border-radius:12px;
-text-decoration:none;
-color:#1a1a1a;
-font-weight:600;
-box-shadow:0 6px 20px rgba(0,0,0,0.08);
-opacity:0;
-transform:translateY(20px);
-transition:0.25s;
-}
-.quick-item:hover{
-transform:translateY(-6px);
+box-shadow:0 4px 18px rgba(0,0,0,0.08);
+font-size:16px; font-weight:600;
+text-decoration:none; color:#1a1a1a;
 }
 
 /* FOOTER */
 footer{
-background:#0b1f3f;
-color:#cfe1ff;
-text-align:center;
-padding:18px;
-margin-top:40px;
+background:#0b1f3f; color:#cfe1ff;
+padding:15px; margin-top:30px;
+text-align:center; font-size:14px;
 }
 
-/* RESPONSIVE */
+/* RESPONSIVE FIXES */
 @media(max-width:900px){
-nav{display:none;}
-.menu-icon{display:block;}
-.hero{text-align:center;}
-.hero-right img{width:240px;margin:auto;}
-.hero-left h1{font-size:32px;}
+nav{ display:none; }
+.menu-icon{ display:block; }
+.hero-left h1{ font-size:30px; }
+.hero-left p{ font-size:15px; }
+.hero{ text-align:center; }
+.hero-right{ width:100%; display:flex; justify-content:center; margin-top:20px; }
+.logo-text{ font-size:17px; }
+header{ padding:10px 15px; }
 }
-
 </style>
 
 </head>
@@ -274,15 +174,15 @@ nav{display:none;}
 <!-- HEADER -->
 <header>
 <div class="logo-box">
-<img class="logo-img" src="https://i.imgur.com/6Jg6B4H.png">
+<img src="https://i.imgur.com/6Jg6B4H.png" class="logo-img">
 <div class="logo-text">Kuldeep Rai Digital Services</div>
 </div>
 
 <nav>
-<a class="active" href="#">Home</a>
-<a href="#">Services</a>
-<a href="#">About</a>
-<a href="#">Contact</a>
+<a class="active" href="index.html">Home</a>
+<a href="services.html">Services</a>
+<a href="about.html">About</a>
+<a href="contact.html">Contact</a>
 </nav>
 
 <div class="menu-icon" id="menuToggle">☰</div>
@@ -290,18 +190,18 @@ nav{display:none;}
 
 <!-- MOBILE MENU -->
 <div class="mobile-menu" id="mobileMenu">
-<a class="active" href="#">Home</a>
-<a href="#">Services</a>
-<a href="#">About</a>
-<a href="#">Contact</a>
+<a href="index.html">Home</a>
+<a href="services.html">Services</a>
+<a href="about.html">About</a>
+<a href="contact.html">Contact</a>
 </div>
 
 <!-- HERO -->
 <section class="hero">
 <div class="hero-left">
-<h1>Welcome to Kuldeep Rai Digital Services</h1>
-<p>Your trusted Jan Seva Kendra offering all Digital & Govt services.</p>
-<a href="#" class="hero-btn">Explore Services</a>
+<h1>Kuldeep Rai Digital Services</h1>
+<p>Your trusted CSC • Jan Seva Kendra for all government and online services.</p>
+<a href="services.html" class="hero-btn">Explore Services</a>
 </div>
 
 <div class="hero-right">
@@ -309,62 +209,38 @@ nav{display:none;}
 </div>
 </section>
 
-<!-- BANNER -->
-<div class="banner">All Government & Digital Services Available</div>
-
 <!-- SERVICES -->
-<section>
 <div class="section-title">Our Services</div>
 
-<div class="search-box">
 <input type="text" id="serviceSearch" placeholder="Search services...">
-</div>
 
 <div class="service-grid">
 
 <div class="service-card">
-<h3>Aadhaar Enrolment</h3>
-<p>New Aadhaar creation.</p>
-</div>
-
-<div class="service-card">
-<h3>Aadhaar Update</h3>
-<p>Mobile, Address, DOB update.</p>
+<h3>Aadhaar Services</h3>
+<p>Update, New, PVC & more</p>
 </div>
 
 <div class="service-card">
 <h3>PAN Card</h3>
-<p>New PAN & Correction.</p>
+<p>New, Correction, Reprint</p>
 </div>
 
 <div class="service-card">
-<h3>Voter ID</h3>
-<p>New, correction & linking.</p>
+<h3>Banking / AePS</h3>
+<p>Withdraw, Balance, Transfer</p>
 </div>
 
-<!-- HIDDEN SEARCHABLE SERVICES -->
-<div class="service-card hidden-service">
-<h3>Birth Certificate</h3>
-<p>Apply, correction, re-issue.</p>
-</div>
-
-<div class="service-card hidden-service">
-<h3>Caste Certificate</h3>
-<p>SC/ST/OBC certificate apply.</p>
-</div>
-
-<div class="service-card hidden-service">
-<h3>Income Certificate</h3>
-<p>Issuance for govt schemes.</p>
+<div class="service-card">
+<h3>Certificates</h3>
+<p>Income, Caste, Residence</p>
 </div>
 
 </div>
-</section>
 
-<!-- QUICK LINKS -->
+<!-- QUICK -->
 <section class="quick-links">
 <h2>Useful Government Portals</h2>
-
 <div class="quick-grid">
 <a href="#" class="quick-item">DigiLocker</a>
 <a href="#" class="quick-item">CSC Portal</a>
@@ -380,37 +256,21 @@ nav{display:none;}
 
 <script>
 
-/* MOBILE MENU */
+/* Mobile Menu */
 const menuToggle=document.getElementById("menuToggle");
 const mobileMenu=document.getElementById("mobileMenu");
+
 menuToggle.addEventListener("click",()=>{
 mobileMenu.style.display=mobileMenu.style.display==="flex"?"none":"flex";
 });
 
-/* SEARCH FILTER (includes hidden services) */
-const searchBox=document.getElementById("serviceSearch");
-if(searchBox){
-searchBox.addEventListener("keyup",()=>{
-const value=searchBox.value.toLowerCase();
+/* Search */
+document.getElementById("serviceSearch").addEventListener("keyup",function(){
+let value=this.value.toLowerCase();
 document.querySelectorAll(".service-card").forEach(card=>{
 card.style.display=card.innerText.toLowerCase().includes(value)?"block":"none";
 });
 });
-}
-
-/* SCROLL ANIMATION */
-const animatedElements=document.querySelectorAll(".service-card,.quick-item");
-function revealOnScroll(){
-animatedElements.forEach(el=>{
-const top=el.getBoundingClientRect().top;
-if(top<window.innerHeight-50){
-el.style.opacity="1";
-el.style.transform="translateY(0)";
-}
-});
-}
-window.addEventListener("scroll",revealOnScroll);
-window.addEventListener("load",revealOnScroll);
 
 </script>
 
